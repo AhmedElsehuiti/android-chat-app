@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="message"
+            type="com.example.chatapp.model.Message" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+  <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      >
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@{message.senderName}"
+          tools:text="medo"
+
+
+          />
+      <LinearLayout
+          android:id="@+id/liner"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          app:layout_constraintEnd_toEndOf="parent"
+          android:gravity="start"
+          android:layout_margin="5dp"
+          >
+
+          <TextView
+              android:id="@+id/massage"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:background="@drawable/background_recieved_massage"
+              android:padding="12dp"
+              android:text="@{message.content}"
+              android:layout_marginVertical="4dp"
+
+              android:textColor="@color/white"
+              tools:layout_editor_absoluteX="255dp"
+              tools:text="do you live   do you do you " />
+
+          <TextView
+              android:id="@+id/time"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="bottom"
+              android:layout_marginEnd="10dp"
+              android:text="@{message.formatDateTime}"
+
+
+              tools:text="ccccccccc"
+
+              tools:layout_editor_absoluteX="104dp"
+              tools:layout_editor_absoluteY="24dp" />
+
+      </LinearLayout>
+  </LinearLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
